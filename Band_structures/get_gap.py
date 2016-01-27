@@ -10,6 +10,7 @@
 # Plot function for Python
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 from numpy import array as npa
 from numpy import concatenate as npc
 
@@ -38,20 +39,20 @@ nb = int(whole[lk][-1])
 # Get band structure data from PROCAR
 band = [line.split() for line in open ('PROCAR', 'r')]
 eng = npa([float(band[j][4]) for j, ln in enumerate(band) if "energy" in ln])
-data = np.reshape(eng, (nk,nb))-Ef
-#print data
+data = np.reshape(eng, (nk,nb)).T-Ef
 
-"""
 # Test if it is a metal
 for i in range(nb):
-	if all(data[i][j] >= 0 for j in range(nk)) or all(data[i][j] <= 0 for j in range(nk)):
-		continue
+	if max(data[i])>0 and min(data[i])<0:
+		print 'This is a metal!!'
+		sys.exit()
 	else:
-		print 'band %s crosses fermi level' %(i+1) 
-"""	
+		continue
 
 c = []
 v = []
+data = data.T
+
 for i in range(nk):
 	for j in range(nb):
 		if data[i][j] > 0:
