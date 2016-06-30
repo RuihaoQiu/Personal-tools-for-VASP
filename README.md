@@ -1,2 +1,2 @@
-# After_vasp
-This project is to analyse the results of VASP.
+# Personal tools for VASP
+This project is to creat my personal tools working on VASP.
