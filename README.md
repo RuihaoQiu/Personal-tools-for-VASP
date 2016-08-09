@@ -8,7 +8,7 @@ Due to self-interests, I am trying to make a set of tools along with my scientif
 
 - <b>dosplot</b> -- plot projected and total DOS.
 - <b>bandplot</b> -- plot band structures with and without projecting to different orbitals.
-- <b>getgap</b> -- obtain band gap from DOS and band structrues.
+- <b>getgap</b> -- obtain band gap from DOS and band structrues. (getgap-abinit -- get band gap from DOS of Abinit)
 ...
 
 This is a very personal and constrained project, I have no time and interest to develop it to large general packages.
